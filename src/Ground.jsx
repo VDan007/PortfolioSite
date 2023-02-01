@@ -28,6 +28,12 @@ export default function Ground() {
     
   }, [normal, roughness]);
 
+  useFrame((state, delta) => {
+    let t = -state.clock.getElapsedTime() * 0.68;
+    roughness.offset.set(0, t);
+    normal.offset.set(0, t);
+  });
+
   
 
   return (

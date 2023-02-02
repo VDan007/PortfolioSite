@@ -9,7 +9,7 @@ import { BufferGeometry } from 'three';
 export function Car() {
   const gltf = useLoader(
     GLTFLoader,
-     "models/mustangNew/scene.gltf"
+     "models/test/scene.gltf"
   );
   
   useEffect(() => {
@@ -41,11 +41,16 @@ export function Car() {
   useFrame((state, delta) => {
     let t = state.clock.getElapsedTime();
    
+    gltf.scene.children[1].rotation.x = t * 3.5;
+    gltf.scene.children[2].rotation.x = t * 3.5;
+    gltf.scene.children[7].rotation.x = t * 3.5;
+    gltf.scene.children[8].rotation.x = t * 3.5;
     // let group = gltf.scene.children[0].children[0].children[0];
     // group.children[0].rotation.x = t * 2;
     // group.children[2].rotation.x = t * 2;
     // group.children[4].rotation.x = t * 2;
     // group.children[6].rotation.x = t * 2;
+    //let t = -state.clock.getElapsedTime() * 0.68;
   });
 
 

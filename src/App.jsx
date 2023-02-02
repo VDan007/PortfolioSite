@@ -17,9 +17,9 @@ import { BlendFunction } from "postprocessing";
 function CarShow(){
   return (
     <>
-      <OrbitControls target={[0.3,1,1]} maxPolarAngle={1.45}/>
+      <OrbitControls target={[0,0,0]} maxPolarAngle={1.45}/>
 
-      <PerspectiveCamera makeDefault fov={50} position={[3,2,5]}/>  
+      <PerspectiveCamera makeDefault fov={50} position={[2,1.5,4]}/>  
       {/* position 0.4,1,0 for driver */}
 
       <color args={[0,0,0]} attach= "background"/>

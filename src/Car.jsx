@@ -43,8 +43,8 @@ export function Car() {
    
     gltf.scene.children[1].rotation.x = t * 3.5;
     gltf.scene.children[2].rotation.x = t * 3.5;
-    gltf.scene.children[7].rotation.x = t * 3.5;
-    gltf.scene.children[8].rotation.x = t * 3.5;
+    gltf.scene.children[4].rotation.x = t * 3.5;
+    gltf.scene.children[5].rotation.x = t * 3.5;
     // let group = gltf.scene.children[0].children[0].children[0];
     // group.children[0].rotation.x = t * 2;
     // group.children[2].rotation.x = t * 2;

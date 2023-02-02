@@ -13,11 +13,16 @@ import {
   ChromaticAberration,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+import * as THREE from "three";
+
+let mouse = new THREE.Vector2();
+let raycaster = new THREE.Raycaster();
+
 
 function CarShow(){
   return (
     <>
-      <OrbitControls target={[0,0,0]} maxPolarAngle={1.45}/>
+      <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
       <PerspectiveCamera makeDefault fov={50} position={[2,1.5,4]}/>  
       {/* position 0.4,1,0 for driver */}
@@ -54,9 +59,11 @@ function CarShow(){
         angle={0.6}
         penumbra={0.5}
         position={[-5,5,0]}
-        castShadow
-        shadow-bias={-0.0001} 
+        // castShadow
+        shadow-bias={1} 
       /> 
+
+     
 
       
       <Ground />
@@ -87,14 +94,30 @@ function CarShow(){
   );
 }
 
+
+function getMousePosition(e){
+
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+
+  console.log(mouse.x);
+
+}
+
+
 function App() {
   
   return(
-    <Suspense fallback={null}>
-      <Canvas shadows>
+    <>
+      <Canvas shadows onMouseMove={ (e) => getMousePosition(e)}>
+      {/* <Environment background={"only"} files={"public/textures/bg.hdr"} /> */}
         <CarShow/>
+
       </Canvas>
-    </Suspense>
+      <div id="info">
+        <h1>Wellocome I'm Daneil</h1>
+      </div>
+    </>
 
   );
  

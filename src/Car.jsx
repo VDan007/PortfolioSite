@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import {  Mesh } from "three";
@@ -11,6 +11,8 @@ export function Car() {
     GLTFLoader,
      "models/test/scene.gltf"
   );
+
+  const car = useRef();
   
   useEffect(() => {
     gltf.scene.scale.set(1, 1, 1); 
@@ -53,7 +55,19 @@ export function Car() {
     //let t = -state.clock.getElapsedTime() * 0.68;
   });
 
+  const handleClick = (
 
+    (e)=>{
+      e.stopPropagation()
+      console.log("car clicked" + e);}
+  );
 
-  return <primitive object={gltf.scene} />;
+  
+
+  return (
+    <mesh onClick={ (e)=>handleClick(e)} 
+          ref={car} 
+    > 
+        <primitive object={gltf.scene} />
+    </mesh>);
 }

@@ -12,11 +12,24 @@ import {
   Bloom,
   ChromaticAberration,
 } from "@react-three/postprocessing";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
+import { RepeatWrapping, TextureLoader } from "three";
 
 let mouse = new THREE.Vector2();
 let raycaster = new THREE.Raycaster();
+
+
+
+
+// const background = 'url("./public/textures/aaa.jpg")'; 
+
+
+
+  //normal.encoding = LinearEncoding;
+  
+
 
 
 function CarShow(){
@@ -28,12 +41,14 @@ function CarShow(){
       {/* position 0.4,1,0 for driver */}
 
       <color args={[0,0,0]} attach= "background"/>
+      
+     
 
       <CubeCamera resolution={256} frames={Infinity}>
         {(texture) => (
             <>
               <Environment map={texture}/>
-              <Car/>
+              <Car />
             </>
         )}
 
@@ -100,17 +115,19 @@ function getMousePosition(e){
   mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
   mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
 
-  console.log(mouse.x);
+  
 
 }
+
+
 
 
 function App() {
   
   return(
     <>
-      <Canvas shadows onMouseMove={ (e) => getMousePosition(e)}>
-      {/* <Environment background={"only"} files={"public/textures/bg.hdr"} /> */}
+      <Canvas shadows >
+      {/* <Environment background={"only"} files={"public/textures/bg.jpg"} /> */}
         <CarShow/>
 
       </Canvas>

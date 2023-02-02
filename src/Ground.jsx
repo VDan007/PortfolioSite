@@ -6,7 +6,7 @@ import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 export default function Ground() {
   // thanks to https://polyhaven.com/a/rough_plasterbrick_05 !
   const [roughness, normal] = useLoader(TextureLoader, [
-    "textures/terrain-roughness.jpg",
+    "textures/floor.jpg",
     "textures/terrain-normal.jpg",
     
 
@@ -29,7 +29,7 @@ export default function Ground() {
   }, [normal, roughness]);
 
   useFrame((state, delta) => {
-    let t = -state.clock.getElapsedTime() * 0.68;
+    let t = -state.clock.getElapsedTime() * 0.5;
     roughness.offset.set(0, t);
     normal.offset.set(0, t);
   });
@@ -38,7 +38,7 @@ export default function Ground() {
 
   return (
     <mesh  rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[30, 30]} />
+      <planeGeometry args={[20, 20]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}

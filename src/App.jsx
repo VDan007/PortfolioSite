@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import { Canvas, useThree } from "@react-three/fiber";
+import {useState, useEffect, useRef, forwardRef} from 'react';
+import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
 import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Billboard } from "@react-three/drei";
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
@@ -12,7 +12,7 @@ import {
   Bloom,
   ChromaticAberration,
 } from "@react-three/postprocessing";
-import { useFrame, useLoader } from "@react-three/fiber";
+
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 import { RepeatWrapping, TextureLoader } from "three";
@@ -34,8 +34,12 @@ import  TWEEN from "@tweenjs/tween.js";
 
 
 function CarShow(){
-  const camera = useThree();
+
+  const cameraRef = useRef(null);
   
+  
+  console.log( cameraRef.current)
+ 
 
   let [cam,setCam] = useState([2,1,7])                 
   const [display, setDisplay] = useState("wellcome");
@@ -44,25 +48,23 @@ function CarShow(){
   
 
   function btnClick(){
-    setDisplay("changed");
-    setCam([-12,1,7])
+    cameraRef.current.position.set(-7,1,7);
+    
     
   }
 
 
-
   
+
   
   
   useEffect(
     ()=>{
-      console.log("USEEFFECT triggered");
+      
       
       return () => {};
     },[display]
   );
-
-
 
   
   
@@ -71,8 +73,9 @@ function CarShow(){
     <>
       <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
-      <PerspectiveCamera  makeDefault fov={50} position={cam}/>  
+      <PerspectiveCamera ref={cameraRef}  makeDefault fov={50} position={[2,1,7]}/>  
       {/* position 0.4,1,0 for driver */}
+      
 
       <color  args={[0,0,0]} attach= "background"/>
       
@@ -162,12 +165,14 @@ function CarShow(){
 
 
 function App() {
+
+  
   
   return(
     <>
       <Canvas shadows >
       {/* <Environment background={"only"} files={"public/textures/bg.jpg"} /> */}
-        <CarShow/>
+        <CarShow />
 
       </Canvas>
       

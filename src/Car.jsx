@@ -26,7 +26,7 @@ export function Car() {
     });
   }, [gltf]);
 
-  console.log(gltf.scene);
+
 
     
 

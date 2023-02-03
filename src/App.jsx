@@ -35,10 +35,16 @@ import  TWEEN from "@tweenjs/tween.js";
 
 function CarShow(){
 
-  const cameraRef = useRef(null);
+
+
+  const {camera} = useThree();
+
+  console.log(camera.position);
+
+ 
   
   
-  console.log( cameraRef.current)
+  
  
 
   let [cam,setCam] = useState([2,1,7])                 
@@ -48,7 +54,9 @@ function CarShow(){
   
 
   function btnClick(){
-    cameraRef.current.position.set(-7,1,7);
+    // cameraRef.current.position.set(-7,1,7);
+    camera.position.set(-4,1,7);
+
     
     
   }
@@ -58,13 +66,7 @@ function CarShow(){
 
   
   
-  useEffect(
-    ()=>{
-      
-      
-      return () => {};
-    },[display]
-  );
+ 
 
   
   
@@ -73,7 +75,7 @@ function CarShow(){
     <>
       <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
-      <PerspectiveCamera ref={cameraRef}  makeDefault fov={50} position={[2,1,7]}/>  
+      <PerspectiveCamera  makeDefault fov={50} position={[2,1,7]}/>  
       {/* position 0.4,1,0 for driver */}
       
 

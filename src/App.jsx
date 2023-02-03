@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import {useState, useRef} from 'react';
 import { Canvas } from "@react-three/fiber";
-import {CubeCamera, OrbitControls, PerspectiveCamera, Environment } from "@react-three/drei";
+import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Billboard } from "@react-three/drei";
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
@@ -29,20 +29,36 @@ let raycaster = new THREE.Raycaster();
 
   //normal.encoding = LinearEncoding;
   
+  
 
 
 
 function CarShow(){
+  const cameraPositions = [[2.5,1,5],[0,1,5]];
+  const [display, setDisplay] = useState("wellcome");
+
+  function btnClick(){
+    setDisplay("changed");
+  }
+
+  
+
   return (
     <>
       <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
-      <PerspectiveCamera makeDefault fov={50} position={[2,1.5,4]}/>  
+      <PerspectiveCamera  makeDefault fov={50} position={ display == "wellcome" ? [2.5,1,5] : [0,1,5]}/>  
       {/* position 0.4,1,0 for driver */}
 
-      <color args={[0,0,0]} attach= "background"/>
+      <color  args={[0,0,0]} attach= "background"/>
       
+      
+
      
+        {/* <Html castShadow receiveShadow occlude="blending"  transform>
+          <iframe title="embed" width={450} height={300} src="https://threejs.org/" frameBorder={0} />
+        </Html> */}
+      
 
       <CubeCamera resolution={256} frames={Infinity}>
         {(texture) => (
@@ -102,8 +118,14 @@ function CarShow(){
       </EffectComposer>
       
 
+        { display == "wellcome" &&   <Html className="content" rotation-y={Math.PI/8}  position={[1,-0.7,0.5]} transform >
+              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                <p>Hello there!</p>
+                <p>I'm Daniel Varjaskéri</p>
+                <button onClick = {btnClick}>next</button>
+              </div>
+            </Html> }
       
-
 
     </> ///carshow func end
   );
@@ -131,9 +153,7 @@ function App() {
         <CarShow/>
 
       </Canvas>
-      <div id="info">
-        <h1>Wellocome I'm Daneil</h1>
-      </div>
+      
     </>
 
   );

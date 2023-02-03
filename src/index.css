@@ -5,6 +5,13 @@ html, body, #root, canvas {
   overflow: hidden;
 }
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
 #root{
   position: relative;
 }
@@ -18,6 +25,15 @@ html, body, #root, canvas {
   height: 20%;
 }
 
-h1{
-  color : violet;
+h3{
+  color : orange;
+}
+
+p{
+  color : orange;
+  font-size: 0.7em;
+}
+
+button{
+  font-size: 0.7em;
 }

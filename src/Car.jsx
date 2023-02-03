@@ -40,6 +40,12 @@ export function Car() {
 //     group.children[6].rotation.x = t * 2;
 //   });
 
+  function openTrunk(){
+    gltf.scene.children[0].children[76].children[0].rotation.x = 20;
+  }
+
+  
+
   useFrame((state, delta) => {
     let t = state.clock.getElapsedTime();
    
@@ -47,6 +53,7 @@ export function Car() {
     gltf.scene.children[2].rotation.x = t * 3.5;
     gltf.scene.children[4].rotation.x = t * 3.5;
     gltf.scene.children[5].rotation.x = t * 3.5;
+    
     // let group = gltf.scene.children[0].children[0].children[0];
     // group.children[0].rotation.x = t * 2;
     // group.children[2].rotation.x = t * 2;

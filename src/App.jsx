@@ -1,5 +1,5 @@
-import {useState, useRef} from 'react';
-import { Canvas } from "@react-three/fiber";
+import {useState, useEffect} from 'react';
+import { Canvas, useThree } from "@react-three/fiber";
 import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Billboard } from "@react-three/drei";
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
@@ -16,9 +16,9 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 import { RepeatWrapping, TextureLoader } from "three";
+import  TWEEN from "@tweenjs/tween.js";
 
-let mouse = new THREE.Vector2();
-let raycaster = new THREE.Raycaster();
+
 
 
 
@@ -30,24 +30,48 @@ let raycaster = new THREE.Raycaster();
   //normal.encoding = LinearEncoding;
   
   
-
+//5
 
 
 function CarShow(){
-  const cameraPositions = [[2.5,1,5],[0,1,5]];
+  const camera = useThree();
+  
+
+  let [cam,setCam] = useState([2,1,7])                 
   const [display, setDisplay] = useState("wellcome");
+
+  
+  
 
   function btnClick(){
     setDisplay("changed");
+    setCam([-12,1,7])
+    
   }
 
+
+
+  
+  
+  
+  useEffect(
+    ()=>{
+      console.log("USEEFFECT triggered");
+      
+      return () => {};
+    },[display]
+  );
+
+
+
+  
   
 
   return (
     <>
       <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
-      <PerspectiveCamera  makeDefault fov={50} position={ display == "wellcome" ? [2.5,1,5] : [0,1,5]}/>  
+      <PerspectiveCamera  makeDefault fov={50} position={cam}/>  
       {/* position 0.4,1,0 for driver */}
 
       <color  args={[0,0,0]} attach= "background"/>
@@ -132,14 +156,7 @@ function CarShow(){
 }
 
 
-function getMousePosition(e){
 
-  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
-
-  
-
-}
 
 
 

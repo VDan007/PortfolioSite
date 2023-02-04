@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef, forwardRef} from 'react';
 import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
-import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Billboard } from "@react-three/drei";
+import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Stars } from "@react-three/drei";
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
@@ -79,7 +79,7 @@ function CarShow(){
       {/* position 0.4,1,0 for driver */}
       
 
-      <color  args={[0,0,0]} attach= "background"/>
+      <color  args={[0,0,0.01]} attach= "background"/>
       
       
 
@@ -89,7 +89,7 @@ function CarShow(){
         </Html> */}
       
 
-      <CubeCamera resolution={256} frames={Infinity}>
+      <CubeCamera resolution={256} frames={Infinity} far={150} >
         {(texture) => (
             <>
               <Environment map={texture}/>
@@ -133,7 +133,7 @@ function CarShow(){
         {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> */}
         <Bloom
           blendFunction={BlendFunction.ADD}
-          intensity={1.3} // The bloom intensity.
+          intensity={0} // The bloom intensity.
           width={300} // render width
           height={300} // render height
           kernelSize={5} // blur kernel size
@@ -174,7 +174,13 @@ function App() {
     <>
       <Canvas shadows >
       {/* <Environment background={"only"} files={"public/textures/bg.jpg"} /> */}
+      
         <CarShow />
+       
+        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+
+        
+
 
       </Canvas>
       

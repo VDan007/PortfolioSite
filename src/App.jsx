@@ -79,7 +79,7 @@ function CarShow(){
       {/* position 0.4,1,0 for driver */}
       
 
-      <color  args={[0,0,0.01]} attach= "background"/>
+      <color  args={[0,0,0.02]} attach= "background"/>
       
       
 
@@ -178,7 +178,7 @@ function App() {
       
         <CarShow />
        
-        <Stars radius={400} depth={190} count={3000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
 
        
 

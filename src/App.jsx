@@ -23,7 +23,7 @@ import  TWEEN from "@tweenjs/tween.js";
 
 
 
-// const background = 'url("./public/textures/aaa.jpg")'; 
+
 
 
 
@@ -39,7 +39,7 @@ function CarShow(){
 
   const {camera} = useThree();
 
-  console.log(camera.position);
+ 
 
  
   
@@ -84,9 +84,7 @@ function CarShow(){
       
 
      
-        {/* <Html castShadow receiveShadow occlude="blending"  transform>
-          <iframe title="embed" width={450} height={300} src="https://threejs.org/" frameBorder={0} />
-        </Html> */}
+      
       
 
       <CubeCamera resolution={256} frames={Infinity} far={150} >
@@ -173,11 +171,11 @@ function App() {
   return(
     <>
       <Canvas shadows >
-      {/* <Environment background={"only"} files={"public/textures/bg.jpg"} /> */}
+      
       
         <CarShow />
        
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={400} depth={190} count={3000} factor={4} saturation={0} fade speed={1} />
 
         
 

@@ -38,14 +38,14 @@ export default function Ground() {
 
   return (
     <mesh  rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[20, 20]} />
+      <planeGeometry args={[5, 45]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}
         normalScale={[0.15, 0.15]}
         roughnessMap={roughness}
         dithering={true}
-        color={[0.015, 0.015, 0.015]}
+        color={[1, 0.078, 0.576]}
         roughness={0.7}
         blur={[1000, 400]} // Blur ground reflections (width, heigt), 0 skips blur
         mixBlur={30} // How much blur mixes with surface roughness (default = 1)

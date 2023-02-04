@@ -15,7 +15,7 @@ import {
 
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
-import { RepeatWrapping, TextureLoader } from "three";
+import { LineBasicMaterial, RepeatWrapping, TextureLoader } from "three";
 import  TWEEN from "@tweenjs/tween.js";
 
 
@@ -75,7 +75,7 @@ function CarShow(){
     <>
       <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
 
-      <PerspectiveCamera  makeDefault fov={50} position={[2,1,7]}/>  
+      <PerspectiveCamera  makeDefault fov={50} position={[2,0,6]}/>  
       {/* position 0.4,1,0 for driver */}
       
 
@@ -149,7 +149,10 @@ function CarShow(){
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri</p>
-                <button onClick = {btnClick}>next</button>
+                <div>
+                <button>Projects</button>
+                <button onClick = {btnClick}>About</button>
+                </div>
               </div>
             </Html> }
       
@@ -177,7 +180,7 @@ function App() {
        
         <Stars radius={400} depth={190} count={3000} factor={4} saturation={0} fade speed={1} />
 
-        
+       
 
 
       </Canvas>

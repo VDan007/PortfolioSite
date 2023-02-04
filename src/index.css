@@ -3,6 +3,7 @@ html, body, #root, canvas {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 *{
@@ -30,8 +31,9 @@ h3{
 }
 
 p{
-  color : orange;
+  color : #F0F757;
   font-size: 0.7em;
+  text-shadow: 0.5px 0.5px 0.5px  rgb(230,90,39) ;
 }
 
 button{

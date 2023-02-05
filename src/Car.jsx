@@ -3,10 +3,14 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import {  Mesh } from "three";
 import { BufferGeometry } from 'three';
+import gsap from "gsap";
 
 // based on "Chevrolet Corvette (C7)" (https://sketchfab.com/3d-models/chevrolet-corvette-c7-2b509d1bce104224b147c81757f6f43a) 
 // by Martin Trafas (https://sketchfab.com/Bexxie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-export function Car() {
+export function Car(props) {
+
+  
+
   const gltf = useLoader(
     GLTFLoader,
      "models/test/scene.gltf"
@@ -41,11 +45,23 @@ export function Car() {
 //     group.children[6].rotation.x = t * 2;
 //   });
 
+
+
   function openTrunk(){
-    gltf.scene.children[0].children[76].children[0].rotation.x = 20;
+    gltf.scene.children[0].children[76].children[0].rotation.x = 0;
+
+
+    gsap.to(gltf.scene.children[0].children[76].children[0].rotation,{
+      x: 1,
+      
+      duration: 1,
+    
+    });
   }
 
-  
+  if(props.openTrunk){
+    openTrunk();
+  }
 
   useFrame((state, delta) => {
     let t = state.clock.getElapsedTime();

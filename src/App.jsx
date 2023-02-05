@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef, forwardRef} from 'react';
 import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
-import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Stars } from "@react-three/drei";
+import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Stars,useHelper } from "@react-three/drei";
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
@@ -15,13 +15,13 @@ import {
 
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
-import { LineBasicMaterial, RepeatWrapping, TextureLoader } from "three";
+import { LineBasicMaterial, RepeatWrapping, Scene, TextureLoader, } from "three";
 import  TWEEN from "@tweenjs/tween.js";
+import gsap from "gsap";
 
 
 
-
-
+ 
 
 
 
@@ -36,12 +36,12 @@ import  TWEEN from "@tweenjs/tween.js";
 function CarShow(){
 
 
-
-  const {camera} = useThree();
-
+  const {scene ,camera} = useThree();
+  
+  camera.lookAt(0,0,0);
  
 
- 
+ const [trunkOPen,setTrunkOpen] = useState(false);
   
   
   
@@ -55,7 +55,22 @@ function CarShow(){
 
   function btnClick(){
     // cameraRef.current.position.set(-7,1,7);
-    camera.position.set(-4,1,7);
+    gsap.to(camera.position,{
+      x: 0,
+      y: 1.5,
+      z: -3,
+      duration: 3,
+      onUpdate: ()=>{
+        camera.lookAt(0,0,0);
+      }
+
+
+
+
+    });
+    //camera.position.set(-4,1,7);
+
+    setTrunkOpen(true);
 
     
     
@@ -64,6 +79,11 @@ function CarShow(){
 
   
 
+   
+
+  
+    
+  
   
   
  
@@ -73,25 +93,23 @@ function CarShow(){
 
   return (
     <>
-      <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/>
+      {/* <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/> */}
 
-      <PerspectiveCamera  makeDefault fov={50} position={[2,0,6]}/>  
+      <PerspectiveCamera  makeDefault fov={50} position={[2.5,0.7,6]} />  
       {/* position 0.4,1,0 for driver */}
       
 
       <color  args={[0,0,0.02]} attach= "background"/>
       
       
-
-     
-      
+    
       
 
       <CubeCamera resolution={256} frames={Infinity} far={150} >
         {(texture) => (
             <>
               <Environment map={texture}/>
-              <Car />
+              <Car openTrunk={trunkOPen} />
             </>
         )}
 
@@ -120,6 +138,9 @@ function CarShow(){
         // castShadow
         shadow-bias={1} 
       /> 
+
+
+      
 
      
 
@@ -176,7 +197,7 @@ function App() {
       <Canvas shadows >
       
       
-        <CarShow />
+        <CarShow  />
        
         <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
 

@@ -72,10 +72,7 @@ function CarShow(){
         }
       });
       setTrunkOpen(true);
-    }
-
-
-    else if(target == "aboutBtn"){
+    }else if(target == "aboutBtn"){
       
       setDisplay(prev=>"about")
       setTrunkOpen(false);
@@ -88,22 +85,28 @@ function CarShow(){
           camera.lookAt(0,0,0);
         }
         
-      })
-
+      });
+    }else if(target == "homeBtn"){
       
+      setDisplay(prev=>"home")
+      setTrunkOpen(false);
+      tl.to(camera.position,{
+        x: 2.5,
+        y: 0.7,
+        z: 6,
+        duration: 3,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,0);
+        }
+        
+      });
     }
 
-    
-    //camera.position.set(-4,1,7);
-
-   
-
-    
     
   }
 
 
- 
+ //position={[2.5,0.7,6]}
   
     
   
@@ -212,8 +215,8 @@ function CarShow(){
   
                 </p>
                 <div>
-                <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
-                <button id="aboutBtn" onClick = {btnClick}>About</button>
+                <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
+                <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
             </Html>  }
@@ -223,15 +226,11 @@ function CarShow(){
             {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
-                <p>I am a self-taught front-end web developer from Hungary with a 
-                  strong passion for technology. With a background in premium car
-                   sales, I bring a unique perspective to my projects, combining 
-                   technical expertise with the understanding of sales and 
-                   marketing. 
+                <p>all my projects
   
                 </p>
                 <div>
-                <button>Projects</button>
+                <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
                 <button id="aboutBtn" onClick = {btnClick}>About</button>
                 </div>
               </div>

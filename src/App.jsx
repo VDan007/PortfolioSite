@@ -48,13 +48,14 @@ function CarShow(){
  
 
   let [cam,setCam] = useState([2,1,7])                 
-  const [display, setDisplay] = useState("wellcome");
+  const [display, setDisplay] = useState("home");
 
   
   
   const tl = gsap.timeline();
+
   function btnClick(e){
-    // cameraRef.current.position.set(-7,1,7);
+    
    
     const target = e.target.id;
     console.log(target);
@@ -76,11 +77,11 @@ function CarShow(){
 
     else if(target == "aboutBtn"){
       
-      setDisplay("about");
-
+      setDisplay(prev=>"about")
+      setTrunkOpen(false);
       tl.to(camera.position,{
         x: 2,
-        y: 1.5,
+        y: 0.5,
         z: -7,
         duration: 3,
         onUpdate: ()=>{
@@ -102,10 +103,7 @@ function CarShow(){
   }
 
 
-  
-
-   
-
+ 
   
     
   
@@ -191,10 +189,11 @@ function CarShow(){
       </EffectComposer>
       
 
-        { display == "wellcome" &&   <Html className="content" rotation-y={Math.PI/8}  position={[1,-0.7,0.5]} transform >
+        { display == "home" &&   <Html sprite position={[1,-0.7,1.5]}  transform>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
-                <p>I'm Daniel Varjaskéri</p>
+                <p>I'm Daniel Varjaskéri </p>
+                
                 <div>
                 <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
                 <button id="aboutBtn" onClick = {e => btnClick(e)}>About</button>
@@ -202,16 +201,43 @@ function CarShow(){
               </div>
             </Html> }
 
-          {  display=="about" && <Html className="content" rotation-y={Math.PI/8}  position={[1,-0.7,0.5]} transform >
+          {  display=="about" && <Html sprite   position={[1,-1.7,1.5]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
-                <p>About me!</p>
-                <p>I'm Daniel Varjaskéri</p>
+                
+                <p>I am a self-taught front-end web developer from Hungary with a 
+                  strong passion for technology. With a background in premium car
+                   sales, I bring a unique perspective to my projects, combining 
+                   technical expertise with a deep understanding of sales and 
+                   marketing strategies. 
+  
+                </p>
+                <div>
+                <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
+                <button id="aboutBtn" onClick = {btnClick}>About</button>
+                </div>
+              </div>
+            </Html>  }
+
+
+
+            {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
+              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                
+                <p>I am a self-taught front-end web developer from Hungary with a 
+                  strong passion for technology. With a background in premium car
+                   sales, I bring a unique perspective to my projects, combining 
+                   technical expertise with the understanding of sales and 
+                   marketing. 
+  
+                </p>
                 <div>
                 <button>Projects</button>
                 <button id="aboutBtn" onClick = {btnClick}>About</button>
                 </div>
               </div>
             </Html>  }
+
+            
       
 
     </> ///carshow func end

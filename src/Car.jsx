@@ -47,20 +47,30 @@ export function Car(props) {
 
 
 
-  function openTrunk(){
-    gltf.scene.children[0].children[76].children[0].rotation.x = 0;
+  function openTrunk(open){
+   // gltf.scene.children[0].children[76].children[0].rotation.x = 0;
 
-
+    if (open){ 
     gsap.to(gltf.scene.children[0].children[76].children[0].rotation,{
       x: 1,
       
       duration: 1,
     
     });
+  } else{
+    gsap.to(gltf.scene.children[0].children[76].children[0].rotation,{
+      x: 0,
+      
+      duration: 1,
+    
+    });
+  }
   }
 
   if(props.openTrunk){
-    openTrunk();
+    openTrunk(true);
+  }else if(!props.openTrunk){
+    openTrunk(false);
   }
 
   useFrame((state, delta) => {

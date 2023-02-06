@@ -38,7 +38,7 @@ function CarShow(){
 
   const {scene ,camera} = useThree();
   
-  camera.lookAt(0,0,0);
+  camera.lookAt(0,0,1);
  
 
  const [trunkOPen,setTrunkOpen] = useState(false);
@@ -79,7 +79,7 @@ function CarShow(){
       tl.to(camera.position,{
         x: 2,
         y: 0.5,
-        z: -7,
+        z: -6,
         duration: 3,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
@@ -100,13 +100,27 @@ function CarShow(){
         }
         
       });
+    }else if(target == "contactBtn"){
+      
+      setDisplay(prev=>"contact")
+      setTrunkOpen(false);
+      tl.to(camera.position,{
+        x: 1.4,
+        y: 0.6,
+        z: -1.9,
+        duration: 3,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,1);
+        }
+        
+      });
     }
 
     
   }
 
 
- //position={[2.5,0.7,6]}
+ //[1.4,0.6,-1.9]
   
     
   
@@ -198,13 +212,14 @@ function CarShow(){
                 <p>I'm Daniel Varjaskéri </p>
                 
                 <div>
-                <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
                 <button id="aboutBtn" onClick = {e => btnClick(e)}>About</button>
+                <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
+                <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
             </Html> }
 
-          {  display=="about" && <Html sprite   position={[1,-1.7,1.5]}  transform >
+          {  display=="about" && <Html sprite   position={[1,-1.7,2.1]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 <p>I am a self-taught front-end web developer from Hungary with a 
@@ -217,6 +232,7 @@ function CarShow(){
                 <div>
                 <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
                 <button id="projectsBtn" onClick = {btnClick}>Projects</button>
+                <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
             </Html>  }
@@ -232,6 +248,22 @@ function CarShow(){
                 <div>
                 <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
                 <button id="aboutBtn" onClick = {btnClick}>About</button>
+                <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
+                </div>
+              </div>
+            </Html>  }
+
+
+            {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
+              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                
+                <p>mycontact info
+  
+                </p>
+                <div>
+                <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
+                <button id="aboutBtn" onClick = {btnClick}>About</button>
+                <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
             </Html>  }

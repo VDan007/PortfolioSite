@@ -52,25 +52,50 @@ function CarShow(){
 
   
   
-
-  function btnClick(){
+  const tl = gsap.timeline();
+  function btnClick(e){
     // cameraRef.current.position.set(-7,1,7);
-    gsap.to(camera.position,{
-      x: 0,
-      y: 1.5,
-      z: -3,
-      duration: 3,
-      onUpdate: ()=>{
-        camera.lookAt(0,0,0);
-      }
+   
+    const target = e.target.id;
+    console.log(target);
+
+    if(target == "projectsBtn"){
+      setDisplay("projects");
+      gsap.to(camera.position,{
+        x: 0,
+        y: 1.5,
+        z: -3,
+        duration: 3,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,0);
+        }
+      });
+      setTrunkOpen(true);
+    }
 
 
+    else if(target == "aboutBtn"){
+      
+      setDisplay("about");
 
+      tl.to(camera.position,{
+        x: 2,
+        y: 1.5,
+        z: -7,
+        duration: 3,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,0);
+        }
+        
+      })
 
-    });
+      
+    }
+
+    
     //camera.position.set(-4,1,7);
 
-    setTrunkOpen(true);
+   
 
     
     
@@ -93,7 +118,7 @@ function CarShow(){
 
   return (
     <>
-      {/* <OrbitControls target={[0,0,0]} maxPolarAngle={1.45} maxDistance={7}/> */}
+      {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={7}/> */}
 
       <PerspectiveCamera  makeDefault fov={50} position={[2.5,0.7,6]} />  
       {/* position 0.4,1,0 for driver */}
@@ -171,11 +196,22 @@ function CarShow(){
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri</p>
                 <div>
-                <button>Projects</button>
-                <button onClick = {btnClick}>About</button>
+                <button id="projectsBtn" onClick = {e => btnClick(e)}>Projects</button>
+                <button id="aboutBtn" onClick = {e => btnClick(e)}>About</button>
                 </div>
               </div>
             </Html> }
+
+          {  display=="about" && <Html className="content" rotation-y={Math.PI/8}  position={[1,-0.7,0.5]} transform >
+              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+                <p>About me!</p>
+                <p>I'm Daniel Varjaskéri</p>
+                <div>
+                <button>Projects</button>
+                <button id="aboutBtn" onClick = {btnClick}>About</button>
+                </div>
+              </div>
+            </Html>  }
       
 
     </> ///carshow func end

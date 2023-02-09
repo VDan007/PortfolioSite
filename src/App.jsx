@@ -5,7 +5,8 @@ import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
 import Boxes from "./Boxes.jsx";
-import FloatingGrid from "./FloatingGrid.jsx"
+import {Overlay} from "./Overlay.jsx";
+
 import {
   EffectComposer,
   DepthOfField,
@@ -27,7 +28,6 @@ import gsap from "gsap";
 
 
 
-  //normal.encoding = LinearEncoding;
   
   
 //5
@@ -206,7 +206,7 @@ function CarShow(){
       </EffectComposer>
       
 
-        { display == "home" &&   <Html sprite position={[1,-0.7,1.5]}  transform>
+      {/* { display == "home" &&   <Html  position={[1,-0.7,1.5]}  transform>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri </p>
@@ -217,9 +217,9 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html> }
+            </Html> } */}
 
-          {  display=="about" && <Html sprite   position={[1,-1.7,2.1]}  transform >
+          {/* {  display=="about" && <Html   sprite   position={[1,-1.7,2.1]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 <p>I am a self-taught front-end web developer from Hungary with a 
@@ -235,10 +235,10 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html>  }
+            </Html>  }  */}
 
 
-
+{/* 
             {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
@@ -251,9 +251,9 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html>  }
+            </Html>  } */}
 
-
+{/* 
             {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
@@ -266,10 +266,10 @@ function CarShow(){
                 <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
-            </Html>  }
+            </Html>  } */}
 
             
-      
+            
 
     </> ///carshow func end
   );
@@ -283,12 +283,12 @@ function CarShow(){
 
 function App() {
 
-  
+  const [display,setDisplay] = useState("home");
   
   return(
     <>
       <Canvas shadows >
-      
+        
       
         <CarShow  />
        
@@ -299,6 +299,7 @@ function App() {
 
       </Canvas>
       
+      <Overlay display={display}/>
     </>
 
   );

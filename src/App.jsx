@@ -238,7 +238,7 @@ function CarShow(){
                 
                 
                 <p>I am a self-taught front-end web developer from Hungary 
-                  with a strong passion for technology. With a background in premium
+                  driven by a boundless passion of all things tech. With a background in premium
                   car sales, I bring a unique perspective to my projects, combining
                   technical experties with a deep understanding of sales and marketing
                   strategies. Also love building awesome stuff..

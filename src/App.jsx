@@ -237,6 +237,21 @@ function CarShow(){
 
           </Float>
 
+          <Html  rotation-y={180*Math.PI/180}    position={[2,0,-6]}  transform >
+              <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
+                
+                
+                <p>I am a self-taught front-end web developer from Hungary 
+                  with a strong passion for technology. With a background in premium
+                  car sales, I bring a unique perspective to my projects, combining
+                  technical experties with a deep understanding of sales and marketing
+                  strategies.
+                </p>
+                
+                
+              </div>
+            </Html>  
+
 
 {/* 
             {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >

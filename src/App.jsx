@@ -134,7 +134,7 @@ function CarShow(){
 
   return (
     <>
-      {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/> */}
+      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/>
 
       <PerspectiveCamera  makeDefault fov={50} position={[5,2,13]} />  
       {/* position 0.4,1,0 for driver */}
@@ -157,14 +157,14 @@ function CarShow(){
       </CubeCamera>
       
       {/* <Boxes/> */}
-      <Rings/>
+      {/* <Rings/> */}
       
       <spotLight
         color={[1,0.25,0.7]}
         intensity = {1.5}
         angle={0.6}
         penumbra={0.5}
-        position={[5,19,0]}
+        position={[5,30,0]}
         castShadow
         shadow-bias={-0.0001}
       />
@@ -175,7 +175,7 @@ function CarShow(){
         intensity = {2}
         angle={0.6}
         penumbra={0.5}
-        position={[-5,19,0]}
+        position={[-5,30,0]}
         // castShadow
         shadow-bias={1} 
       /> 
@@ -219,13 +219,9 @@ function CarShow(){
                 </div>
               </div>
             </Html> 
-          <Float
-          speed={0.7} // Animation speed, defaults to 1
-          rotationIntensity={0} // XYZ rotation intensity, defaults to 1
-          floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-          floatingRange={[-0.4, 0]} 
-            >
-           <Html  rotation-y={180*Math.PI/180}    position={[0,3,-6]}  transform >
+          
+
+           <Html occlude rotation-y={180*Math.PI/180} rotation-x={12*Math.PI/180}   position={[0,5.1,-10.7]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
@@ -235,9 +231,9 @@ function CarShow(){
               </div>
             </Html>  
 
-          </Float>
+         
 
-          <Html  rotation-y={180*Math.PI/180}    position={[2,0,-6]}  transform >
+          {/* <Html  rotation-y={180*Math.PI/180}    position={[2,0,-6]}  transform >
               <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
@@ -250,11 +246,11 @@ function CarShow(){
                 
                 
               </div>
-            </Html>  
+            </Html>   */}
 
 
 
-            {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
+            {/* {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 <p>all my projects
@@ -266,10 +262,10 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html>  }
+            </Html>  } */}
 
 
-            {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
+            {/* {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 <p>mycontact info
@@ -281,7 +277,7 @@ function CarShow(){
                 <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
-            </Html>  }
+            </Html>  } */}
 
             
             

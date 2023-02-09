@@ -46,14 +46,24 @@ button{
 }
 
 .wrapper{
-  width: 100px;
+  width: 110px;
+  height: 64px;
   border: 1px solid greenyellow;
+  border-radius: 7px;
+  overflow: hidden;
 }
 
 .wrapper2{
-  width: 300px;
+  width: 320px;
   border: 1px solid greenyellow;
   color: greenyellow;
+}
+
+.compScreen{
+  background-color: green;
+  overflow-y: auto;
+  height: 100%;
+  font-size: 9px;
 }
 
 

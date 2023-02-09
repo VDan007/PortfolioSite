@@ -35,11 +35,11 @@ import Projects from "./Projects.jsx";
 
 
 function CarShow(){
-
+  
 
   const {scene ,camera} = useThree();
   
-  camera.lookAt(0,0,1);
+  camera.lookAt(0,0,0);
  
 
  const [trunkOPen,setTrunkOpen] = useState(true);
@@ -128,15 +128,15 @@ function CarShow(){
   
   
  
+ 
 
-  
   
 
   return (
     <>
-      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/>
+      {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/> */}
 
-      <PerspectiveCamera  makeDefault fov={50} position={[2.5,0.7,6]} />  
+      <PerspectiveCamera  makeDefault fov={50} position={[5,2,13]} />  
       {/* position 0.4,1,0 for driver */}
       
 
@@ -253,7 +253,7 @@ function CarShow(){
             </Html>  
 
 
-{/* 
+
             {  display=="projects" && <Html sprite   position={[1,-1.7,1.5]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
@@ -266,9 +266,9 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html>  } */}
+            </Html>  }
 
-{/* 
+
             {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
@@ -281,7 +281,7 @@ function CarShow(){
                 <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
-            </Html>  } */}
+            </Html>  }
 
             
             
@@ -298,7 +298,7 @@ function CarShow(){
 
 function App() {
 
-  const [display,setDisplay] = useState("home");
+  
   
   return(
     <>

@@ -45,7 +45,7 @@ button{
   font-size: 0.7em;
 }
 
-.wrapper{
+.wrapper,.wrapper3{
   color : #F0F757;
   text-shadow: 0.5px 0.5px 0.9px  rgb(230,90,39) ;
   
@@ -59,6 +59,12 @@ button{
   border: 1px solid greenyellow;
   color: greenyellow;
   border-radius: 15px;
+}
+
+.wrapper3{
+  width: 300px;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 /* width: 500px;

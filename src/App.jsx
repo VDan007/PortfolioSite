@@ -92,9 +92,9 @@ function CarShow(){
       setDisplay(prev=>"home")
       setTrunkOpen(false);
       tl.to(camera.position,{
-        x: 2.5,
-        y: 0.7,
-        z: 6,
+        x: 12,
+        y: 6,
+        z: 40,
         duration: 3,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
@@ -106,12 +106,12 @@ function CarShow(){
       setDisplay(prev=>"contact")
       setTrunkOpen(false);
       tl.to(camera.position,{
-        x: 1.4,
-        y: 0.6,
-        z: -1.9,
+        x: 10,
+        y: 5,
+        z: -16,
         duration: 3,
         onUpdate: ()=>{
-          camera.lookAt(0,0,1);
+          camera.lookAt(0,0,15);
         }
         
       });
@@ -233,20 +233,20 @@ function CarShow(){
 
          
 
-          {/* <Html  rotation-y={180*Math.PI/180}    position={[2,0,-6]}  transform >
-              <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
+          <Html  rotation-y={180*Math.PI/180}   rotation-x={50*Math.PI/180}  position={[0,-2,-20]}  transform >
+              <div className="wrapper3" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
                 <p>I am a self-taught front-end web developer from Hungary 
                   with a strong passion for technology. With a background in premium
                   car sales, I bring a unique perspective to my projects, combining
                   technical experties with a deep understanding of sales and marketing
-                  strategies.
+                  strategies. Also love building awesome stuff..
                 </p>
                 
                 
               </div>
-            </Html>   */}
+            </Html>  
 
 
 
@@ -264,8 +264,7 @@ function CarShow(){
               </div>
             </Html>  } */}
 
-
-            {/* {  display=="contact" && <Html sprite  position={[0.8,-0.8,2]}    transform >
+             <Html sprite  position={[8,4,-6]}    transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 <p>mycontact info
@@ -277,7 +276,7 @@ function CarShow(){
                 <button id="projectsBtn" onClick = {btnClick}>Projects</button>
                 </div>
               </div>
-            </Html>  } */}
+            </Html>  
 
             
             

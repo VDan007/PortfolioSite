@@ -134,7 +134,7 @@ function CarShow(){
 
   return (
     <>
-      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/>
+      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={50}/>
 
       <PerspectiveCamera  makeDefault fov={50} position={[5,2,13]} />  
       {/* position 0.4,1,0 for driver */}
@@ -157,14 +157,14 @@ function CarShow(){
       </CubeCamera>
       
       {/* <Boxes/> */}
-      {/* <Rings/> */}
+      <Rings/>
       
       <spotLight
-        color={[1,0.25,0.7]}
-        intensity = {1.5}
+        color={[5,0.25,0.7]}
+        intensity = {1.0}
         angle={0.6}
         penumbra={0.5}
-        position={[5,30,0]}
+        position={[-9,45,0]}
         castShadow
         shadow-bias={-0.0001}
       />
@@ -172,11 +172,11 @@ function CarShow(){
 
        <spotLight
         color={[0.14,0.5,1]}
-        intensity = {2}
-        angle={0.6}
+        intensity = {1.0}
+        angle={1}
         penumbra={0.5}
-        position={[-5,30,0]}
-        // castShadow
+        position={[9,85,10]}
+        castShadow
         shadow-bias={1} 
       /> 
 
@@ -221,7 +221,7 @@ function CarShow(){
             </Html> 
           
 
-           <Html occlude rotation-y={180*Math.PI/180} rotation-x={12*Math.PI/180}   position={[0,5.1,-10.7]}  transform >
+           <Html occlude rotation-y={180*Math.PI/180} rotation-x={3*Math.PI/180}   position={[0,7,-14.05]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 

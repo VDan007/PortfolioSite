@@ -38,7 +38,7 @@ export default function Ground() {
 
   return (
     <mesh  rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[11, 45]} />
+      <planeGeometry args={[30, 190]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normal}

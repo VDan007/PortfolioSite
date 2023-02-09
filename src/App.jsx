@@ -31,7 +31,7 @@ import Projects from "./Projects.jsx";
 
   
   
-//5
+
 
 
 function CarShow(){
@@ -48,7 +48,7 @@ function CarShow(){
   
  
 
-  let [cam,setCam] = useState([2,1,7])                 
+                  
   const [display, setDisplay] = useState("home");
 
   
@@ -65,8 +65,8 @@ function CarShow(){
       setDisplay("projects");
       gsap.to(camera.position,{
         x: 0,
-        y: 1.5,
-        z: -3,
+        y: 13,
+        z: -24,
         duration: 3,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
@@ -78,9 +78,9 @@ function CarShow(){
       setDisplay(prev=>"about")
       setTrunkOpen(false);
       tl.to(camera.position,{
-        x: 2,
+        x: 0,
         y: 0.5,
-        z: -6,
+        z: -37,
         duration: 3,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
@@ -221,8 +221,8 @@ function CarShow(){
             </Html> 
           
 
-           <Html occlude rotation-y={180*Math.PI/180} rotation-x={3*Math.PI/180}   position={[0,7,-14.05]}  transform >
-              <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
+           <Html occlude  rotation-y={180*Math.PI/180} rotation-x={1*Math.PI/180}   position={[0.02,6.85,-14.13]}  transform >
+              <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
                 <Projects/>

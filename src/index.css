@@ -46,11 +46,11 @@ button{
 }
 
 .wrapper{
-  width: 138px;
-  height: 76px;
-  border: 1px solid greenyellow;
-  border-radius: 7px;
-  overflow: hidden;
+  color : #F0F757;
+  text-shadow: 0.5px 0.5px 0.9px  rgb(230,90,39) ;
+  
+  
+  
 }
 
 .wrapper2{

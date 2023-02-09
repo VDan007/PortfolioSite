@@ -134,9 +134,9 @@ function CarShow(){
 
   return (
     <>
-      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={50}/>
+      {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={50}/> */}
 
-      <PerspectiveCamera  makeDefault fov={50} position={[5,2,13]} />  
+      <PerspectiveCamera  makeDefault fov={50} position={[12,6,40]} />  
       {/* position 0.4,1,0 for driver */}
       
 
@@ -207,7 +207,7 @@ function CarShow(){
       </EffectComposer>
       
 
-         <Html  position={[1,2,8]}  transform>
+         <Html sprite position={[8,2.5,30]}  transform>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri </p>

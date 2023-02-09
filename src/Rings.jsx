@@ -10,7 +10,7 @@ export default function Rings() {
 
     for (let i = 0; i < itemsRef.current.length; i++) {
       let mesh = itemsRef.current[i];
-      let z = (i - 7) * 13 + ((elapsed * 0.4) % 13) * 2;
+      let z = (i - 7) * 16 + ((elapsed * 1.9) % 16) * 2;
       let dist = Math.abs(z);
       mesh.position.set(0, 0, -z);
       mesh.scale.set(7 - dist * 0.04, 7 - dist * 0.04, 3 - dist * 0.04);

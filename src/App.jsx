@@ -42,7 +42,7 @@ function CarShow(){
   camera.lookAt(0,0,0);
  
 
- const [trunkOPen,setTrunkOpen] = useState(true);
+ const [trunkOPen,setTrunkOpen] = useState(false);
   
   
   
@@ -106,12 +106,12 @@ function CarShow(){
       setDisplay(prev=>"contact")
       setTrunkOpen(false);
       tl.to(camera.position,{
-        x: 10,
+        x: 14,
         y: 5,
-        z: -16,
+        z: -17,
         duration: 3,
         onUpdate: ()=>{
-          camera.lookAt(0,0,15);
+          camera.lookAt(0,0,0);
         }
         
       });

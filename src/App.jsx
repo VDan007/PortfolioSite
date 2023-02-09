@@ -207,7 +207,7 @@ function CarShow(){
       </EffectComposer>
       
 
-      {/* { display == "home" &&   <Html  position={[1,-0.7,1.5]}  transform>
+         <Html  position={[1,2,8]}  transform>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri </p>
@@ -218,9 +218,14 @@ function CarShow(){
                 <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
                 </div>
               </div>
-            </Html> } */}
-
-           <Html  rotation-y={180*Math.PI/180}  sprite  position={[0,3,-6]}  transform >
+            </Html> 
+          <Float
+          speed={0.7} // Animation speed, defaults to 1
+          rotationIntensity={0} // XYZ rotation intensity, defaults to 1
+          floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+          floatingRange={[-0.4, 0]} 
+            >
+           <Html  rotation-y={180*Math.PI/180}    position={[0,3,-6]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
@@ -229,6 +234,8 @@ function CarShow(){
                 
               </div>
             </Html>  
+
+          </Float>
 
 
 {/* 

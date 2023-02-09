@@ -19,6 +19,7 @@ import * as THREE from "three";
 import { LineBasicMaterial, RepeatWrapping, Scene, TextureLoader, } from "three";
 import  TWEEN from "@tweenjs/tween.js";
 import gsap from "gsap";
+import Projects from "./Projects.jsx";
 
 
 
@@ -41,7 +42,7 @@ function CarShow(){
   camera.lookAt(0,0,1);
  
 
- const [trunkOPen,setTrunkOpen] = useState(false);
+ const [trunkOPen,setTrunkOpen] = useState(true);
   
   
   
@@ -133,7 +134,7 @@ function CarShow(){
 
   return (
     <>
-      {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={7}/> */}
+      <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={30}/>
 
       <PerspectiveCamera  makeDefault fov={50} position={[2.5,0.7,6]} />  
       {/* position 0.4,1,0 for driver */}
@@ -155,7 +156,7 @@ function CarShow(){
 
       </CubeCamera>
       
-      <Boxes/>
+      {/* <Boxes/> */}
       <Rings/>
       
       <spotLight
@@ -163,7 +164,7 @@ function CarShow(){
         intensity = {1.5}
         angle={0.6}
         penumbra={0.5}
-        position={[5,5,0]}
+        position={[5,19,0]}
         castShadow
         shadow-bias={-0.0001}
       />
@@ -174,7 +175,7 @@ function CarShow(){
         intensity = {2}
         angle={0.6}
         penumbra={0.5}
-        position={[-5,5,0]}
+        position={[-5,19,0]}
         // castShadow
         shadow-bias={1} 
       /> 
@@ -219,23 +220,15 @@ function CarShow(){
               </div>
             </Html> } */}
 
-          {/* {  display=="about" && <Html   sprite   position={[1,-1.7,2.1]}  transform >
+           <Html  rotation-y={180*Math.PI/180}  sprite  position={[0,3,-6]}  transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
-                <p>I am a self-taught front-end web developer from Hungary with a 
-                  strong passion for technology. With a background in premium car
-                   sales, I bring a unique perspective to my projects, combining 
-                   technical expertise with the understanding of sales and 
-                   marketing. 
-  
-                </p>
-                <div>
-                <button id="homeBtn" onClick = {e => btnClick(e)}>Home</button>
-                <button id="projectsBtn" onClick = {btnClick}>Projects</button>
-                <button id="contactBtn" onClick = {e => btnClick(e)}>Contact</button>
-                </div>
+                
+                <Projects/>
+                
+                
               </div>
-            </Html>  }  */}
+            </Html>  
 
 
 {/* 
@@ -299,7 +292,7 @@ function App() {
 
       </Canvas>
       
-      <Overlay display={display}/>
+      {/* <Overlay display={display}/> */}
     </>
 
   );

@@ -19,7 +19,7 @@ export function Car(props) {
   const car = useRef();
   
   useEffect(() => {
-    gltf.scene.scale.set(1, 1, 1); 
+    gltf.scene.scale.set(3, 3, 3); 
     gltf.scene.position.set(0, 0,0);
     gltf.scene.rotateX(Math.PI/2/145);
     gltf.scene.traverse((object) => {

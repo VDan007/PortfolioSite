@@ -5,7 +5,7 @@ export default function Projects(){
     const date = new Date ();
     const timeToDisplay = `${date.toLocaleDateString()}`
 
-    const [activated,setActivated] = React.useState(true);
+    const [activated,setActivated] = React.useState(false);
 
     function toggleComputer(){
         setActivated(prev=> !prev)

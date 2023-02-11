@@ -82,80 +82,7 @@ function CarShow(props){
         
       });
   }
-  
-  
-  
-    
-   
-   
 
-    // if(target == "projectsBtn"){
-    //   setDisplay("projects");
-    //   gsap.to(camera.position,{
-    //     x: 0,
-    //     y: 13,
-    //     z: -24,
-    //     duration: 3,
-    //     onUpdate: ()=>{
-    //       camera.lookAt(0,0,0);
-    //     }
-    //   });
-    //   setTrunkOpen(true);
-    // }else if(target == "aboutBtn"){
-      
-    //   setDisplay(prev=>"about")
-    //   setTrunkOpen(false);
-    //   tl.to(camera.position,{
-    //     x: 0,
-    //     y: 0.5,
-    //     z: -37,
-    //     duration: 3,
-    //     onUpdate: ()=>{
-    //       camera.lookAt(0,0,0);
-    //     }
-        
-    //   });
-    // }else if(target == "homeBtn"){
-      
-    //   setDisplay(prev=>"home")
-    //   setTrunkOpen(false);
-    //   tl.to(camera.position,{
-    //     x: 12,
-    //     y: 6,
-    //     z: 40,
-    //     duration: 3,
-    //     onUpdate: ()=>{
-    //       camera.lookAt(0,0,0);
-    //     }
-        
-    //   });
-    // }else if(target == "contactBtn"){
-      
-    //   setDisplay(prev=>"contact")
-    //   setTrunkOpen(false);
-    //   tl.to(camera.position,{
-    //     x: 14,
-    //     y: 5,
-    //     z: -17,
-    //     duration: 3,
-    //     onUpdate: ()=>{
-    //       camera.lookAt(0,0,0);
-    //     }
-        
-    //   });
-    // }
-
-    
-  
-
-
- //[1.4,0.6,-1.9]
-  
-    
-  
-  
-  
- 
  
 
   
@@ -165,7 +92,7 @@ function CarShow(props){
       {/* <OrbitControls target={[0.2,0.9,0.2]} maxPolarAngle={1.45} maxDistance={50}/> */}
 
       <PerspectiveCamera  makeDefault fov={50} position={[12,6,40]} />  
-      {/* position 0.4,1,0 for driver */}
+      
       
 
       <color  args={[0,0,0.02]} attach= "background"/>
@@ -218,7 +145,7 @@ function CarShow(props){
       {/* <FloatingGrid/> */}
 
       <EffectComposer>
-        {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> */}
+        
         <Bloom
           blendFunction={BlendFunction.ADD}
           intensity={0} // The bloom intensity.
@@ -240,10 +167,10 @@ function CarShow(props){
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri </p>
                 
-                <div>
-                  <button id="aboutBtn" onClick = {props.btnClick}>About</button>
-                  <button id="projectsBtn" onClick = {props.btnClick}>Projects</button>
-                  <button id="contactBtn" onClick = {props.btnClick}>Contact</button>
+                <div className='navBtnDiv'>
+                  <button className='navBtn' id="aboutBtn" onClick = {props.btnClick}>About</button>
+                  <button className='navBtn' id="projectsBtn" onClick = {props.btnClick}>Projects</button>
+                  <button className='navBtn' id="contactBtn" onClick = {props.btnClick}>Contact</button>
                 </div>
               </div>
             </Html> }
@@ -254,10 +181,10 @@ function CarShow(props){
                 
                 
                 <Projects/>
-                <div>
-                  <button id="aboutBtn" onClick = {props.btnClick}>About</button>
-                  <button id="home" onClick = {props.btnClick}>Home</button>
-                  <button id="contactBtn" onClick = {props.btnClick}>Contact</button>
+                <div className='navBtnDiv'>
+                  <button className='navBtn' id="aboutBtn" onClick = {props.btnClick}>About</button>
+                  <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>
+                  <button className='navBtn' id="contactBtn" onClick = {props.btnClick}>Contact</button>
                 </div>
                 
               </div>
@@ -275,10 +202,10 @@ function CarShow(props){
                   technical experties with a solid understanding of sales and marketing
                   strategies. Also love building awesome stuff..
                 </p>
-                <div>
-                  <button id="homeBtn" onClick = {props.btnClick}>Home</button>
-                  <button id="projectsBtn" onClick = {props.btnClick}>Projects</button>
-                  <button id="contactBtn" onClick = {props.btnClick}>Contact</button>
+                <div className='navBtnDiv'>
+                  <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>
+                  <button className='navBtn' id="projectsBtn" onClick = {props.btnClick}>Projects</button>
+                  <button className='navBtn' id="contactBtn" onClick = {props.btnClick}>Contact</button>
                 </div>
                 
                 
@@ -295,10 +222,10 @@ function CarShow(props){
                 <p>mycontact info
   
                 </p>
-                <div>
-                  <button id="homeBtn" onClick = {props.btnClick}>Home</button>
-                  <button id="projectsBtn" onClick = {props.btnClick}>Projects</button>
-                  <button id="aboutBtn" onClick = {props.btnClick}>About</button>
+                <div className='navBtnDiv'>
+                  <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>
+                  <button className='navBtn' id="projectsBtn" onClick = {props.btnClick}>Projects</button>
+                  <button className='navBtn' id="aboutBtn" onClick = {props.btnClick}>About</button>
                 </div>
               </div>
             </Html>  }

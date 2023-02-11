@@ -31,10 +31,12 @@ function CarShow(props){
 
   const computerActive = props.computerActive;
   const computerToggle = props.computerToggle;
+
  
   const tl = gsap.timeline();
 
   if(props.display == "about"){
+    
     tl.to(camera.position,{
         x: 8,
         y: 5,
@@ -53,7 +55,9 @@ function CarShow(props){
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
         }
+        
       });
+      
   }
 
   if(props.display == "projects"){
@@ -84,10 +88,10 @@ function CarShow(props){
 
   if(props.display == "home"){
     tl.to(camera.position,{
-        x: 25,
+        x: 28,
         y: 12,
-        z: 40,
-        duration: 3,
+        z: 45,
+        duration: 2.5,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
         }
@@ -97,7 +101,7 @@ function CarShow(props){
         x: 12,
         y: 6,
         z: 40,
-        duration: 3,
+        duration: 1,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
         }
@@ -183,7 +187,7 @@ function CarShow(props){
       </EffectComposer>
       
 
-         {props.display == "home" && <Html sprite position={[8,2.5,30]}  transform>
+         {(props.display == "home" || props.display == "start") && <Html sprite position={[8,2.5,30]}  transform>
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 <p>Hello there!</p>
                 <p>I'm Daniel Varjaskéri </p>
@@ -202,7 +206,7 @@ function CarShow(props){
                 
                 
                 <Projects computerActive={props.computerActive} computerToggle={props.computerToggle} />
-                <div className='navBtnDiv'>
+                <div className='navBtnDivComp'>
                   <button className='navBtn' id="aboutBtn" onClick = {props.btnClick}>About</button>
                   <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>
                   <button className='navBtn' id="contactBtn" onClick = {props.btnClick}>Contact</button>

@@ -30,8 +30,10 @@ function App() {
 
 
   const [trunkOPen,setTrunkOpen] = useState(false);
-  const [display, setDisplay] = useState("home");
+  const [display, setDisplay] = useState("start");
   const [computerActive,setCompurterActive] = useState(false);
+
+  
 
   function computerToggle(){
     console.log("clicked comp");
@@ -41,10 +43,15 @@ function App() {
   function btnClick (e){
     const target = e.target.id;
 
+    
+    
+
     if(target == "aboutBtn"){
       
       setDisplay("about");
       setTrunkOpen(false);
+
+      
       
     }else if(target == "projectsBtn"){
 
@@ -67,7 +74,8 @@ function App() {
       <Canvas shadows >
         
       
-        <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive} computerToggle={computerToggle}/>
+        <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive}
+         computerToggle={computerToggle} />
        
         <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
 

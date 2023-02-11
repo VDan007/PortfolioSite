@@ -2,6 +2,9 @@ import React from "react";
 
 export default function Projects(){
 
+    const date = new Date ();
+    const timeToDisplay = `${date.getFullYear()}. ${date.getMonth()}. ${date.getDay()}  ${date.getHours()}:${date.getMinutes()} `
+
     const [activated,setActivated] = React.useState(true);
 
     return(
@@ -17,7 +20,7 @@ export default function Projects(){
                 <>
             <header>
                 <p>Projects vault num 007</p>
-                <p>{Date()}</p>
+                <p >{timeToDisplay }</p>
                 
             </header>
             <main>

@@ -54,7 +54,7 @@ export function Car(props) {
     gsap.to(gltf.scene.children[0].children[76].children[0].rotation,{
       x: 1,
       
-      duration: 1,
+      duration: 2,
     
     });
   } else{

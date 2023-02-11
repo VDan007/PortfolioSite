@@ -59,6 +59,7 @@ button{
   border: 1px solid greenyellow;
   color: greenyellow;
   border-radius: 15px;
+  position: relative;
 }
 
 .wrapper3{
@@ -71,7 +72,7 @@ button{
   height: 250px; */
 
 .compScreen{
-  background-color: green;
+  background-color: black;
   overflow-y: auto;
   height: 100%;
   font-size: 12px;
@@ -81,6 +82,17 @@ button{
   justify-content: center;
   align-items: center;
 
+}
+
+
+.compScreenActivated{
+  position: absolute;
+  left: -185px;
+  top: -100px;
+  background-color: green;
+  height: 300px;
+  width: 500px;
+  
 }
 
 

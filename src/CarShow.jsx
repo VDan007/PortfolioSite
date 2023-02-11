@@ -28,6 +28,9 @@ function CarShow(props){
   const {scene ,camera} = useThree();
   
   camera.lookAt(0,0,0);
+
+  const computerActive = props.computerActive;
+  const computerToggle = props.computerToggle;
  
   const tl = gsap.timeline();
 
@@ -35,7 +38,7 @@ function CarShow(props){
     tl.to(camera.position,{
         x: 8,
         y: 5,
-        z: -37,
+        z: -45,
         duration: 2,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
@@ -194,11 +197,11 @@ function CarShow(props){
             </Html> }
           
                 {/* have to rotate when comp opens */}
-           {props.display == "projects" && <Html occlude  rotation-y={180*Math.PI/180} rotation-x={25*Math.PI/180}   position={[0.02,6.85,-14.13]}  transform >
+           {props.display == "projects" && <Html occlude  rotation-y={180*Math.PI/180} rotation-x={props.computerActive ? 25*Math.PI/180 : 1*Math.PI/180}   position={[0.02,6.85,-14.13]}  transform >
               <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
-                <Projects/>
+                <Projects computerActive={props.computerActive} computerToggle={props.computerToggle} />
                 <div className='navBtnDiv'>
                   <button className='navBtn' id="aboutBtn" onClick = {props.btnClick}>About</button>
                   <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>

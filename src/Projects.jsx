@@ -1,26 +1,26 @@
 import React from "react";
 
-export default function Projects(){
+export default function Projects(props){
 
     const date = new Date ();
     const timeToDisplay = `${date.toLocaleDateString()}`
 
-    const [activated,setActivated] = React.useState(false);
+    
 
-    function toggleComputer(){
-        setActivated(prev=> !prev)
-    }
+    // function toggleComputer(){
+    //     setActivated(prev=> !prev)
+    // }
 
     return(
-        <div className={activated ? "compScreenActivated" : "compScreen"}>
+        <div className={props.computerActive ? "compScreenActivated" : "compScreen"}>
           
-          {!activated && 
-          <>
+          {!props.computerActive && 
+          <div onClick={props.computerToggle}>
              <p>WELLCOME!</p>
             <p>Press to Activate!</p>
           
-          </>}
-            {activated &&
+          </div>}
+            {props.computerActive &&
                 <>
             <header>
                 <p>Projects archive NR007</p>
@@ -35,7 +35,7 @@ export default function Projects(){
                 
             </main> 
             <footer>
-                <button onClick={toggleComputer}>EXIT</button>
+                <button onClick={props.computerToggle}>EXIT</button>
             </footer>
             </>}
 

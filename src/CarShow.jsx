@@ -33,14 +33,23 @@ function CarShow(props){
 
   if(props.display == "about"){
     tl.to(camera.position,{
-        x: 0,
-        y: 0.5,
+        x: 8,
+        y: 5,
         z: -37,
-        duration: 3,
+        duration: 2,
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
         }
         
+      })
+      .to(camera.position,{
+        x: 0,
+        y: 0.5,
+        z: -37,
+        duration: 1,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,0);
+        }
       });
   }
 
@@ -72,6 +81,16 @@ function CarShow(props){
 
   if(props.display == "home"){
     tl.to(camera.position,{
+        x: 25,
+        y: 12,
+        z: 40,
+        duration: 3,
+        onUpdate: ()=>{
+          camera.lookAt(0,0,0);
+        }
+        
+      })
+      .to(camera.position,{
         x: 12,
         y: 6,
         z: 40,
@@ -79,7 +98,6 @@ function CarShow(props){
         onUpdate: ()=>{
           camera.lookAt(0,0,0);
         }
-        
       });
   }
 

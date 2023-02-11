@@ -221,7 +221,7 @@ function CarShow(){
             </Html> 
           
                 {/* have to rotate when comp opens */}
-           <Html occlude  rotation-y={180*Math.PI/180} rotation-x={20*Math.PI/180}   position={[0.02,6.85,-14.13]}  transform >
+           <Html occlude  rotation-y={180*Math.PI/180} rotation-x={25*Math.PI/180}   position={[0.02,6.85,-14.13]}  transform >
               <div className="wrapper2" onPointerDown={(e) => e.stopPropagation()}>
                 
                 
@@ -238,9 +238,9 @@ function CarShow(){
                 
                 
                 <p>I am a self-taught front-end web developer from Hungary 
-                  driven by a boundless passion of all things tech. With a background in premium
+                  driven by a passion of all things tech. With a background in premium
                   car sales, I bring a unique perspective to my projects, combining
-                  technical experties with a deep understanding of sales and marketing
+                  technical experties with a solid understanding of sales and marketing
                   strategies. Also love building awesome stuff..
                 </p>
                 

@@ -3,9 +3,13 @@ import React from "react";
 export default function Projects(){
 
     const date = new Date ();
-    const timeToDisplay = `${date.getFullYear()}. ${date.getMonth()}. ${date.getDay()}  ${date.getHours()}:${date.getMinutes()} `
+    const timeToDisplay = `${date.toLocaleDateString()}`
 
     const [activated,setActivated] = React.useState(true);
+
+    function toggleComputer(){
+        setActivated(prev=> !prev)
+    }
 
     return(
         <div className={activated ? "compScreenActivated" : "compScreen"}>
@@ -19,7 +23,7 @@ export default function Projects(){
             {activated &&
                 <>
             <header>
-                <p>Projects vault num 007</p>
+                <p>Projects archive NR007</p>
                 <p >{timeToDisplay }</p>
                 
             </header>
@@ -31,7 +35,7 @@ export default function Projects(){
                 
             </main> 
             <footer>
-                <button>EXIT</button>
+                <button onClick={toggleComputer}>EXIT</button>
             </footer>
             </>}
 

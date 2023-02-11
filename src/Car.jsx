@@ -13,7 +13,7 @@ export function Car(props) {
 
   const gltf = useLoader(
     GLTFLoader,
-     "public/models/scene.gltf"
+     "public/models/test/scene.gltf"
   );
 
   const car = useRef();

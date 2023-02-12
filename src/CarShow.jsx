@@ -244,9 +244,12 @@ function CarShow(props){
              {props.display =="contact" && <Html sprite  position={[8,4,-6]}    transform >
               <div className="wrapper" onPointerDown={(e) => e.stopPropagation()}>
                 
-                <p>mycontact info
-  
-                </p>
+                  <p>
+                  Email: varjaskerid@gmail.com
+                  </p>
+                  <p>
+                  WhatsApp: +36303888629
+                  </p>
                 <div className='navBtnDiv'>
                   <button className='navBtn' id="homeBtn" onClick = {props.btnClick}>Home</button>
                   <button className='navBtn' id="projectsBtn" onClick = {props.btnClick}>Projects</button>

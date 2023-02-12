@@ -90,19 +90,12 @@ export function Car(props) {
     //let t = -state.clock.getElapsedTime() * 0.68;
   });
 
-  const handleClick = (
-
-    (e)=>{
-      e.stopPropagation()
-      console.log("car clicked" + e);}
-  );
+  
 
   
 
   return (
-    <mesh onClick={ (e)=>handleClick(e)} 
-          ref={car} 
-    > 
+    
         <primitive object={gltf.scene} />
-    </mesh>);
+  )
 }

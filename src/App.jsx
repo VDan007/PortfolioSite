@@ -72,7 +72,7 @@ function App() {
   return(
     <>
       <Canvas shadows >
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader/>}>
       
         <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive}
          computerToggle={computerToggle} />
@@ -83,8 +83,8 @@ function App() {
 
 
       </Canvas>
-      <Loader/>
       {/* <Overlay display={display}/> */}
+      <Loader/>
     </>
 
   );

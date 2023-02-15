@@ -72,7 +72,7 @@ function App() {
   return(
     <>
       <Canvas shadows >
-      <Suspense fallback={<Loader/>}>
+      <Suspense fallback={null}>
       
         <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive}
          computerToggle={computerToggle} />

@@ -21,6 +21,7 @@ import  TWEEN from "@tweenjs/tween.js";
 import gsap from "gsap";
 import Projects from "./Projects.jsx";
 import CarShow from "./CarShow.jsx";
+import Loading from "./Loader.jsx";
 
 
 
@@ -69,13 +70,7 @@ function App() {
     }
   }
   
-  function Loading(){
-    return(
-      <div classlist="loader">
-        <h1>Loading</h1>
-      </div>
-    );
-  }
+  
 
   return(
     <>

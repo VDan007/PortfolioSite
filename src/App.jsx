@@ -69,22 +69,30 @@ function App() {
     }
   }
   
+  function Loading(){
+    return(
+      <div classlist="loader">
+        <h1>Loading</h1>
+      </div>
+    );
+  }
+
   return(
     <>
-      <Canvas shadows >
-      <Suspense fallback={null}>
-      
-        <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive}
-         computerToggle={computerToggle} />
-       
-        <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
-
-        </Suspense>
+      <Suspense fallback={ <Loading /> }>
+        <Canvas shadows >
+        
+          <CarShow display = {display} trunkOPen = {trunkOPen} btnClick = {(e)=>btnClick(e)} computerActive={computerActive}
+          computerToggle={computerToggle} />
+        
+          <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
 
 
-      </Canvas>
+
+        </Canvas>
+      </Suspense>
       {/* <Overlay display={display}/> */}
-      <Loader/>
+      {/* <Loader/> */}
     </>
 
   );

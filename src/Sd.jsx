@@ -81,7 +81,7 @@ export default function Sd (){
           x: -29,
           y: -20,
           z: -20,
-          duration: 5,
+          duration: 3,
           
           
         })
@@ -90,7 +90,7 @@ export default function Sd (){
           x: 29,
           y: -20,
           z: -20,
-          duration: 2,
+          duration: 1,
           
           
         })
@@ -113,7 +113,7 @@ export default function Sd (){
           x: 29,
           y: -2,
           z: 70,
-          duration: 0.5,
+          duration: 0.2,
           
           
         }).then(

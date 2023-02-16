@@ -20,6 +20,7 @@ import { LineBasicMaterial, RepeatWrapping, Scene, TextureLoader, } from "three"
 import  TWEEN from "@tweenjs/tween.js";
 import gsap from "gsap";
 import Projects from "./Projects.jsx";
+import Sd from "./Sd.jsx";
 
 
 function CarShow(props){
@@ -161,9 +162,11 @@ function CarShow(props){
       /> 
 
 
-      
+         
+            <Sd/>
 
-     
+          
+           
 
       
       <Ground />

@@ -5,6 +5,7 @@ import {  Mesh } from "three";
 import { BufferGeometry } from 'three';
 import gsap from "gsap";
 
+
 // based on "Chevrolet Corvette (C7)" (https://sketchfab.com/3d-models/chevrolet-corvette-c7-2b509d1bce104224b147c81757f6f43a) 
 // by Martin Trafas (https://sketchfab.com/Bexxie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 export function Car(props) {
@@ -13,13 +14,13 @@ export function Car(props) {
 
   const gltf = useLoader(
     GLTFLoader,
-     "models/test/scene.gltf"
+     "/scene.gltf"
   );
 
   const car = useRef();
   
   useEffect(() => {
-    gltf.scene.scale.set(1, 1, 1); 
+    gltf.scene.scale.set(8, 8, 8); 
     gltf.scene.position.set(0, 0,0);
     gltf.scene.rotateX(Math.PI/2/145);
     gltf.scene.traverse((object) => {
@@ -54,7 +55,7 @@ export function Car(props) {
     gsap.to(gltf.scene.children[0].children[76].children[0].rotation,{
       x: 1,
       
-      duration: 1,
+      duration: 2,
     
     });
   } else{
@@ -89,19 +90,12 @@ export function Car(props) {
     //let t = -state.clock.getElapsedTime() * 0.68;
   });
 
-  const handleClick = (
-
-    (e)=>{
-      e.stopPropagation()
-      console.log("car clicked" + e);}
-  );
+  
 
   
 
   return (
-    <mesh onClick={ (e)=>handleClick(e)} 
-          ref={car} 
-    > 
+    
         <primitive object={gltf.scene} />
-    </mesh>);
+  )
 }

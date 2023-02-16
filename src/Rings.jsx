@@ -10,13 +10,13 @@ export default function Rings() {
 
     for (let i = 0; i < itemsRef.current.length; i++) {
       let mesh = itemsRef.current[i];
-      let z = (i - 7) * 3.5 + ((elapsed * 0.4) % 3.5) * 2;
+      let z = (i - 7) * 16 + ((elapsed * 1.9) % 16) * 2;
       let dist = Math.abs(z);
       mesh.position.set(0, 0, -z);
-      mesh.scale.set(1 - dist * 0.04, 1 - dist * 0.04, 1 - dist * 0.04);
+      mesh.scale.set(7 - dist * 0.04, 7 - dist * 0.04, 3 - dist * 0.04);
 
       let colorScale = 1;
-      if (dist > 2) {
+      if (dist > 30) {
         colorScale = 1 - (Math.min(dist, 12) - 2) / 10;
       }
       colorScale *= 0.5;
@@ -39,7 +39,7 @@ export default function Rings() {
           key={i}
           ref={(el) => (itemsRef.current[i] = el)}
         >
-          <torusGeometry args={[3.35, 0.05, 16, 100]} />
+          <torusGeometry args={[3.35, 0.08, 16, 100]} />
           <meshStandardMaterial emissive={[4, 0.1, 0.4]} color={[0, 0, 0]} />
         </mesh>
       ))}

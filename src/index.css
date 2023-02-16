@@ -160,7 +160,12 @@ main{
 footer button {
   color: inherit;
   background-color: inherit;
-  padding: 0.1rem;
+  padding: 0.1rem 0.3rem;
+  border: 2px solid rgb(55, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 

@@ -6,7 +6,7 @@ import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
 import Boxes from "./Boxes.jsx";
 import {Overlay} from "./Overlay.jsx";
-import Sd from "./Sd.jsx";
+
 
 import {
   EffectComposer,
@@ -82,7 +82,7 @@ function App() {
           computerToggle={computerToggle} />
         
           <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
-          <Sd/>
+          
 
 
         </Canvas>

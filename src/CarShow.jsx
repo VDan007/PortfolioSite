@@ -134,8 +134,8 @@ function CarShow(props){
               <Car openTrunk={props.trunkOPen} />
             </>
         )}
-
       </CubeCamera>
+
       
       {/* <Boxes/> */}
       <Rings/>

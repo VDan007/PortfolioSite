@@ -14,7 +14,7 @@ export default function Sd (){
 
     const gltf02 = useLoader(
         GLTFLoader,
-         "dist/sd.gltf"
+         "/sd.gltf"
       );
     
       

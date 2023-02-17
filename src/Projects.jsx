@@ -20,6 +20,7 @@ export default function Projects(props){
             <p>Press to Activate!</p>
           
           </div>}
+
             {props.computerActive &&
                 <>
             <header>
@@ -33,8 +34,10 @@ export default function Projects(props){
                     <p>AUTHOR</p>
                 </div>
                 <div className="projectFolder">
-                    <img src="/github.svg" alt="" />
-                    <p>Github</p>
+                    <a href="https://github.com/VDan007" target="_blank">
+                        <img src="/github.svg" alt="" />
+                        <p>Github</p>
+                    </a>
                 </div>
                 <div className="projectFolder"></div>
                 

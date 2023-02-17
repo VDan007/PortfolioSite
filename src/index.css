@@ -20,6 +20,11 @@ html, body, #root, canvas {
   position: relative;
 }
 
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
 
 .content{
   width: 50%;

@@ -181,12 +181,20 @@ footer button {
 
 
 .loader{
+  width: 100%;
+  height: 100vh;
   display:flex;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(blue,violet);
-  color: yellow;
-  text-shadow: 0.5px 0.5px 3px  orangered;
+  background: black;
+  color: white;
+  overflow: hidden;
+  
+}
+
+#loaderImg{
+    max-width: 300px;
+    max-height: 300px;
 }

@@ -45,6 +45,7 @@ export default function Projects(props){
             </main> 
             <footer>
                 <button onClick={props.computerToggle}>EXIT</button>
+                <img src="/decor.webp" alt="" />
             </footer>
             </>}
 

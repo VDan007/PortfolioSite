@@ -103,6 +103,7 @@ h3{
 
 .compScreen{
   background-color: black;
+  
   overflow-y: auto;
   height: 100%;
   font-size: 12px;
@@ -112,6 +113,8 @@ h3{
   justify-content: center;
   align-items: center;
   transition: overflow 2s;
+  cursor: pointer;
+  
 }
 
 
@@ -120,6 +123,7 @@ h3{
   left: -185px;
   top: -140px;
   background-color: black;
+  
   height: 300px;
   width: 500px;
   
@@ -144,6 +148,8 @@ header{
   justify-content: space-between;
 }
 
+
+
 header p {
   text-align: center;
   font-size: 0.8rem;
@@ -159,8 +165,20 @@ main{
   height: 70%;
   display: flex;
   gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url("/matrix.gif");
+  background-blend-mode: darken;
 }
 
+footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer img{
+  height: 25px;
+  
+}
 
 footer button {
   color: inherit;
@@ -170,7 +188,14 @@ footer button {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  cursor: pointer;
+  transition-duration: 0.8s;
+}
+
+footer button:hover{
+  transform: scale(1.2);
+  background: rgb(55, 255, 0);
+  color: black;
 }
 
 
@@ -181,7 +206,11 @@ footer button {
   cursor: pointer;
   font-size: 0.7rem;
   text-align: center;
-  
+  transition-duration: 0.8s;
+}
+
+.projectFolder:hover{
+  transform: scale(1.2);
 }
 
 

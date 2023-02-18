@@ -29,17 +29,21 @@ export default function Projects(props){
                 
             </header>
             <main>
-                <div className="projectFolder">
-                    <img src="/folder.svg" alt="" />
-                    <p>AUTHOR</p>
-                </div>
+                
                 <div className="projectFolder">
                     <a href="https://github.com/VDan007" target="_blank">
                         <img src="/github.svg" alt="" />
                         <p>Github</p>
                     </a>
                 </div>
-                <div className="projectFolder"></div>
+                <div className="projectFolder">
+                    <a href="http://tetenyautomoso.hu/" target="_blank">
+                        <img src="/folder.svg" alt="" />
+                        <p>Carwash</p>
+                    </a>
+
+                    
+                </div>
                 
                 
             </main> 

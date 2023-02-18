@@ -207,10 +207,12 @@ footer button:hover{
   font-size: 0.7rem;
   text-align: center;
   transition-duration: 0.8s;
+  
 }
 
 .projectFolder:hover{
   transform: scale(1.2);
+  
 }
 
 

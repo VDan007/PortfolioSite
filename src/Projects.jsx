@@ -41,8 +41,12 @@ export default function Projects(props){
                         <img src="/folder.svg" alt="" />
                         <p>Carwash</p>
                     </a>
-
-                    
+                </div>
+                <div className="projectFolder">
+                    <a href="https://fanciful-biscuit-b160fc.netlify.app" target="_blank">
+                        <img src="/folder.svg" alt="" />
+                        <p>Quizzical</p>
+                    </a>
                 </div>
                 
                 

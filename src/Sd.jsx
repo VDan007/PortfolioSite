@@ -17,7 +17,7 @@ export default function Sd (){
          "/sd.gltf"
       );
     
-      
+      console.log(gltf02);
       
       useEffect(() => {
         gltf02.scene.scale.set(0.07, 0.07, 0.07); 

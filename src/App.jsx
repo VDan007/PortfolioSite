@@ -1,26 +1,7 @@
-import {useState, useEffect, useRef, forwardRef, Suspense} from 'react';
-import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
-import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,ScreenSpace,Stars,useHelper , Loader} from "@react-three/drei";
-import Ground from "./Ground.jsx";
-import { Car } from "./Car.jsx";
-import Rings from "./Rings.jsx";
-import Boxes from "./Boxes.jsx";
-import {Overlay} from "./Overlay.jsx";
+import {useState, Suspense} from 'react';
+import { Canvas} from "@react-three/fiber";
+import { Stars} from "@react-three/drei";
 
-
-import {
-  EffectComposer,
-  DepthOfField,
-  Bloom,
-  ChromaticAberration,
-} from "@react-three/postprocessing";
-
-import { BlendFunction } from "postprocessing";
-import * as THREE from "three";
-import { LineBasicMaterial, RepeatWrapping, Scene, TextureLoader, } from "three";
-import  TWEEN from "@tweenjs/tween.js";
-import gsap from "gsap";
-import Projects from "./Projects.jsx";
 import CarShow from "./CarShow.jsx";
 import Loading from "./Loader.jsx";
 
@@ -45,27 +26,17 @@ function App() {
   function btnClick (e){
     const target = e.target.id;
 
-    
-    
 
     if(target == "aboutBtn"){
-      
       setDisplay("about");
       setTrunkOpen(false);
-
-      
-      
     }else if(target == "projectsBtn"){
-
       setDisplay("projects");
       setTrunkOpen(true);  
-
     }else if(target == "contactBtn"){
-
       setDisplay("contact");
       setTrunkOpen(false);      
     }else if(target == "homeBtn"){
-
       setDisplay("home");
       setTrunkOpen(false);      
     }
@@ -83,12 +54,9 @@ function App() {
         
           <Stars radius={500} depth={190} count={3000} factor={6} saturation={2} fade speed={1} />
           
-
-
         </Canvas>
       </Suspense>
-      {/* <Overlay display={display}/> */}
-      {/* <Loader/> */}
+      
     </>
 
   );
@@ -96,4 +64,4 @@ function App() {
        
 }
 
-export default App
+export default App;

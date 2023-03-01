@@ -17,7 +17,7 @@ export function Car(props) {
      "/scene.gltf"
   );
 
-  const car = useRef();
+  
   
   useEffect(() => {
     gltf.scene.scale.set(8, 8, 8); 

@@ -4,7 +4,7 @@ import {CubeCamera, OrbitControls, PerspectiveCamera, Environment, Html, Float,S
 import Ground from "./Ground.jsx";
 import { Car } from "./Car.jsx";
 import Rings from "./Rings.jsx";
-import Boxes from "./Boxes.jsx";
+
 import {Overlay} from "./Overlay.jsx";
 
 import {

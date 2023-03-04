@@ -9,15 +9,11 @@ import gsap from "gsap";
 
 export function Car(props) {
 
-  
-
   const gltf = useLoader(
     GLTFLoader,
      "/scene.gltf"
   );
 
-  
-  
   useEffect(() => {
     gltf.scene.scale.set(8, 8, 8); 
     gltf.scene.position.set(0, 0,0);
@@ -30,9 +26,6 @@ export function Car(props) {
       }
     });
   }, [gltf]);
-
-
-
 
 
   function openTrunk(open){
@@ -63,10 +56,6 @@ export function Car(props) {
     gltf.scene.children[4].rotation.x = t * 3.5;
     gltf.scene.children[5].rotation.x = t * 3.5;
   });
-
-  
-
-  
 
   return (
         <primitive object={gltf.scene} />

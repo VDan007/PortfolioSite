@@ -260,10 +260,6 @@ function CarShow(props){
                 </div>
               </div>
             </Html>  }
-
-            
-            
-
     </> ///carshow func end
   );
 }
